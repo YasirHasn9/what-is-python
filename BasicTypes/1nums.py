@@ -1,15 +1,14 @@
-
-                         #Numbers
+                         #Numbers -1
 '''
-There is 2 types of numbers in python
+There are 2 types of numbers in python
                -Integer 
                -Float (any number has a decimal )
-
 '''
+
 print(5) # == 5
 print(5 + 6) # == 11
 print("5" + "6") # == 56 why? Basically when you wrap a number with (" ")
-                 # python deal with it as a string: "1" + "100" = "1001"
+                 # python deal with it as a string: "1" + "100" = "1100"
 '''
 so just try to remember that you don't need to wrap numbers with (" ") when you are dealing 
 with mathematician operations
