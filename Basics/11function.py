@@ -21,3 +21,8 @@ person_info()
 # and also i can pass to them argument and change the default values 
 person_info("Stephon" , 33)
 # i told ya , they can do magical job ,)
+'''
+The point of the deafult values is , if there is no values passed then 
+we have a backup info that will not destroy the program.
+ 
+'''
