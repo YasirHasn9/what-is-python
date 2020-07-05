@@ -1,3 +1,4 @@
+                    #  Parameters/arguments's function 
 '''
 function can do magical things in programming, in order for them to do extraordinary 
 job you have to as a programmer provide the tools for them to do so 
@@ -17,5 +18,5 @@ now, you are asking with the hack is argument ?
 dont freak out with these terminologies , they just words and not a big deal 
 
 parameters are these been decleared within the function 
-argument are these been passed to the function when we call/invoke it
+arguments are these been passed to the function when we call/invoke it
 '''
