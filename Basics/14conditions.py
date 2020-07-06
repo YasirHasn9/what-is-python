@@ -1,7 +1,7 @@
 # conditions statements
 '''
 In programming , its important to know whats true and false because getting to know that helps 
-a lot in your logic and how to deal with the tuthey values/statements and falsy/statements
+a lot in your logic and how to deal with the truthy values/statements and falsy/statements
 
 Also , this would help a lot on how to write a well shaped algorithm 
       in case of true statement, do something
@@ -9,7 +9,7 @@ Also , this would help a lot on how to write a well shaped algorithm
 
 
 so how to write a conditional statements ?
-   python provide something called if/else and this not only python most of the languages
+   python provide something called if/else and this not only python most of the languages provide this
 
 
 
@@ -41,7 +41,7 @@ elif condition_three:
 
 else:
     if none of the above is true then run the code here
-    do something else 
+    do something 
 '''
 # we use multiple elif statement but one else statement and been used at the end
 if number > 4:
