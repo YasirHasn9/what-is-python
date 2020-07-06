@@ -17,3 +17,13 @@ so in while-loop is good for looping around something that we don't know how man
 the loop , it stops when the given condition return false.
  so the while loop checks if the condition is true.
 '''
+
+# now we can use both looping statement and the logic ones
+
+checkNumber = True
+number = 1
+while checkNumber:
+    print(number)
+    if number == 100:
+        checkNumber = False
+    number += 1
