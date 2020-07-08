@@ -1,82 +1,45 @@
-'''
-How to build a store ?
-  what the store needs to be store ?
-     who deal with store ?
-        what the store contains ?
+class Store:
 
-
-
-store's needs :
-  a.users
-    1.customers
-    2.vendors
-    3.admins
-  b.product
-  c.parchases
-
-
-
-
-A.Users
- -attributes
-  1.name 
-  2. is the user admin?
-    customer:
-       -attributes
-        1.name
-        2.purchases
-    vendors:
-    -attributes
-        1.name
-        2.products
-    admin:
-    -attributes
-        1.name
-        2.the user is an admin
-'''
-
-
-class User:
-    # each user needs name and is he is a an admin or not ?
-    def __init__(self, name, is_admin=False):
+    # init is working as constructor and initialize the object
+    def __init__(self, name, departments):
         self.name = name
-        self.is_admin = is_admin
+        self.departments = departments
+
+    def print_welcome(self):
+        print(
+            f"Welcome to {self.name} , what department do yoi like to visit ?")
+
+        for d in self.departments:
+            print(d.name)
 
 
-# there is 3 types of users
-# 1.customer
-class Customer(User):
-    def __init__(self, name):
-        super().__init__(name)
-        self.purchases = []
+class Department:
+    def __init__(self, id, name, products):
+        self.id = id
+        self.name = name
+        self.products = products
 
-# 2.venders
-
-
-class Vender(User):
-    def __init__(self, name):
-        super().__init__(name)
-        self.products = []
+    def __str__(self):
+        return f"{self.id}: {self.name}"
 
 
-# 3.Admin
-class Admin(User):
-    def __init__(self, name):
-        super().__init__(name, is_admin=True)
+store = Store("The Dugout", [
+    Department(1, "Baseball", []),
+    Department(2, "Basketball", []),
+    Department(3, "Football", []),
+    Department(4, "Golf", []),
+]
+)
+# print(store.departments[1].name)
 
+while True:
+    store.print_welcome()
 
-'''
-B.Products
-   -- attribute
-     1.name
-     2.price
-     3.vender 
+    # get the department number the user wants to visit:
+    selection = input("Which department would you like to visit? ")
 
+    if selection == "quit":
+        break
 
-C.Purchases
- -- attribute
-     1.Products
-     2.customer
-     3.price
-     4.date and time info about when the purchase was completed
-'''
+    chosen_department = store.departments[int(selection) - 1]
+    print(f"You picked the {chosen_department.name} department.")
