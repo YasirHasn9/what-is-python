@@ -30,3 +30,18 @@ print(multiplayer)
 
 print(get_multiplayer(get_sum(20, 20)))
 # COOOOOOOOOOOOOL , right ?
+
+'''
+passing by references is meaning whatever changes that you make to that information it
+will also change the original data 
+passing by value it will only change the data that you want without presisting data , which if you 
+copy a list and you want to change it , the original one would not get any effect 
+but the opposite would happend with the passing by references 
+
+
+copying for large data is expensive 
+PBR is cheaper 
+'''
+
+# if we have no return in a function does it remain in memory? even if it has executed?
+# What’s the difference between a lightbulb and a pregnant woman? 😂😂 No cheating!!!
