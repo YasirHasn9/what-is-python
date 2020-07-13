@@ -69,3 +69,42 @@ def search(arr, target):
         if target == element:
             return True
 
+            # Log - Linear
+
+
+'''
+Log- linear is another way of measuring the complexity of the operation that perform
+on the data as log-linear function of the input size
+
+you can think of as looking for every single element and do some additional work 
+on that element 
+
+so it is the gold standred for sorting algorithm
+Quick sort 
+Merage Sort 
+'''
+
+# Quadratic Time
+'''
+The number of algorithm increases the number of operation that perform on the data
+as a quadratic function of the input size like Bubble Sort
+'''
+n = 10**2  # --> 100
+
+
+def print_all(arr):
+    for first_item in arr:
+        for second_item in arr:
+            print(first_item, second_item)
+
+
+# Bubble Sort algorithm
+def bubble_sort(arr):
+   # loop over the arr and get every line
+    for i in range(len(arr) - 1):
+        #     and again loop over one item to compare it to every element in the arr
+        for j in range(len(arr) - 2):
+            # if the item greater than the item next to it
+            if arr[i] > arr[i + 1]:
+                #     then swap items
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
