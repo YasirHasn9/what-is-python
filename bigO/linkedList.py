@@ -77,9 +77,21 @@ class LinkedList:
         new_node.next = current_node
         self.head = new_node
 
+    def add_at_poition(self, prev_node, data):
+        new_node = Node(data)
+
+        if not prev_node:
+            print("pervious not in the list")
+            return
+
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
 
 l_list = LinkedList()
 l_list.append("a")
 l_list.append("b")
-l_list.prepend("c")
+l_list.append("c")
+l_list.append("d")
+l_list.add_at_poition(l_list.head.next, "e")
 l_list.print_list()
