@@ -19,16 +19,30 @@ class DLL:
         self.head = None
 
     def append(self, data):
+        new_node = Node(data)
         if self.head is None:
-            new_node = Node(data)
             new_node.prev = None
             self.head = new_node
+        
+        if self.head:
+            cur = self.head
+            while cur.next:
+                cur = cur.next
+            cur.next = new_node
+            new_node.prev = cur
+            new_node.next = None
 
     def print_l(self):
         cur = self.head
         while cur:
             print(cur.data)
             cur = cur.next
+
+
+
 dll = DLL()
 dll.append(1)
+dll.append(2)
+dll.append(3)
+dll.append(4)
 dll.print_l()
