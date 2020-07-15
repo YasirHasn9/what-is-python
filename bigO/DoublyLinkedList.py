@@ -23,7 +23,7 @@ class DLL:
         if self.head is None:
             new_node.prev = None
             self.head = new_node
-        
+
         if self.head:
             cur = self.head
             while cur.next:
@@ -32,12 +32,22 @@ class DLL:
             new_node.prev = cur
             new_node.next = None
 
+    def prepend(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            new_node.prev = None
+            self.head = new_node
+        else:
+            self.head.prev = new_node
+            new_node.next = self.head
+            self.head = new_node
+            new_node.prev = None
+
     def print_l(self):
         cur = self.head
         while cur:
             print(cur.data)
             cur = cur.next
-
 
 
 dll = DLL()
