@@ -43,16 +43,71 @@ class DLL:
             self.head = new_node
             new_node.prev = None
 
+    def remove_head(self):
+        if self.head:
+            temp = self.head
+            cur = temp.next
+            temp.prev = None
+            self.head = cur
+            return temp.data
+
+    def delete(self, key):
+        cur = self.head
+        while cur:
+
+            # check if the key is the head
+            if cur.next == key and cur == self.head:
+                # the head is the only node in the list
+                if not cur.next:
+                    cur = None
+                    self.head = None
+                    return
+
     def print_l(self):
         cur = self.head
         while cur:
-            print(cur.data)
+            print("ggg", cur.data)
             cur = cur.next
 
 
 dll = DLL()
 dll.append(1)
-dll.append(2)
-dll.append(3)
-dll.append(4)
+dll.delete(1)
 dll.print_l()
+
+# def delete(self, key):
+#     cur = self.head
+#     while cur:
+#         # if the node that we want to delete heppens to be the first node(head) of list
+#         if cur.next == key and cur == self.head:
+#             # if the node is the only node in the list
+#             if not cur.next:
+#                 cur = None
+#                 self.head = None
+#                 return cur.data
+#             else:
+#                 # get the node after the cur
+#                 nxt = cur.next
+#                 # the pervious node of the next should none
+#                 nxt.prev = None
+#                 # make the deleted node none
+#                 cur = None
+#                 self.head = nxt
+#                 return
+#         elif cur.data == key:
+#             if cur.next:
+#                 nxt = cur.next
+#                 prev = cur.prev
+#                 prev.next = nxt
+#                 nxt.prev = prev
+#                 cur.next = None
+#                 cur.prev = None
+#                 cur = None
+#                 return
+#             else:
+#                 prev = cur.prev
+#                 prev.next = None
+#                 cur.prev = None
+#                 cur = None
+#                 return
+#         cur = cur.next
