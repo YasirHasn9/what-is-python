@@ -104,27 +104,32 @@ class ListNode:
 
     # [a] -> <- [b] -> <- [c] -> <- [d] -> <-none
     # for instance we want to insert a node before the c
-    # so the next of the new node is the c 
-    # and the previous of the c is the node node 
+    # so the next of the new node is the c
+    # and the previous of the c is the node node
     # the pervious of the new node should the old pervious of the c node
     def insert_before(self, value):
         cur_prev = self.prev
-        self.prev = ListNode(value, cur_prev , self)
+        self.prev = ListNode(value, cur_prev, self)
         if cur_prev:
             cur_prev.next = self.prev
 
-
     # [a] -> <- [b] -> <- [c] -> <- [d] -> <- [none]
     # we want to delete the d
-    # make sure that we have a prev node 
+    # make sure that we have a prev node
     # so we can point it to the next of the deleted node
     # and in case we have a next node for the deleted node
     # make the previous node of the next node points to
     # the pervious node of the deleted node
+
     def delete(self):
         if self.prev:
             self.prev.next = self.next
         if self.next:
             self.next.prev = self.prev
-    
 
+
+class DoublyLinkedList:
+    def __init__(self, node=None):
+        self.head = node
+        self.tail = node
+        self.length = 1 if node is not None else 0
