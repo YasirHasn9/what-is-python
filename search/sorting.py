@@ -29,7 +29,7 @@ def bubble_sort(arr):
 random_list_of_nums = [5, 2, 1, 8, 4]
 print("bubble sort sort before sorting \n", random_list_of_nums,  "\n")
 bubble_sort(random_list_of_nums)
-print("after \n" ,random_list_of_nums)
+print("after \n", random_list_of_nums)
 
 
 # Selection sorting
@@ -61,12 +61,59 @@ def selection_sort(arr):
             # make the swap with lowest unsorted item with the first unsorted element
             arr[i], arr[lowest_value_index] = arr[lowest_value_index], arr[i]
 
+
 # the time complexity is O(n^2)
 random_list_of_nums = [12, 8, 3, 20, 11]
 print("###################")
 print("selection sort sort before sorting \n", random_list_of_nums, "\n")
 selection_sort(random_list_of_nums)
-print("after \n",random_list_of_nums)
+print("after \n", random_list_of_nums)
 
 
+# Insert Sorting
+'''
+Insert Sort is a another for sorting items 
+this sorting segment the list into 2 parts  , sorted and and unsorted 
+and then will iterate over the items in the unsorted list and insert in the correct position 
 
+imagine that we have a dock of cards and we want to sort them descdeninly 
+to do that
+1. the first card considered a sorted one of length 1 in the array
+2. every other cards is unsorted in the array
+
+*** 
+so we have 2 parts in the list ,
+ sorted one and unsorted one 
+ ***
+
+ 3. every element in the unsorted list gonna comaper itself to the one the sorted 
+ array and see where it goes
+
+'''
+
+
+def inserting_sort(arr):
+    # we assume that the first item in the list is sorted already
+    # so we are gonna loop over the second part of list which start from the second item
+    # and compare to the one in the sorted arr and then insert in the correct position
+    for i in range(1, len(arr)):
+        item_to_insert = arr[i]
+
+        # the index of the pervious index
+        previous_index = i - 1
+
+        # move all items in the sorted list if they are larger than
+        # the item to insert
+        while previous_index >= 0 and arr[previous_index] > item_to_insert:
+            arr[previous_index + 1] = arr[previous_index]
+            previous_index -= 1
+
+        
+        # insert the item 
+        arr[previous_index + 1] =  item_to_insert
+
+print("###################")
+random_list_of_nums = [9, 1, 15, 28, 6]
+print("selection sort sort before sorting \n", random_list_of_nums, "\n")
+inserting_sort(random_list_of_nums)
+print("atfer \n" ,random_list_of_nums)
