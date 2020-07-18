@@ -29,3 +29,31 @@ def linear_search(arr, target):
 '''
 
 
+'''
+Binary Search 
+we are gonna start form the middel index
+if target value found at the middle index:
+     Then it is great and return the item
+
+if the target is greater that the middel index:
+    then eliminate the data from 0 - middle index
+    and keep going on this style of searching
+else:
+    it means that the target value start from the 0- middle index 
+    and eliminate the rest of the data 
+    and keep going doing this style of searching 
+'''
+
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    mid = (high - low) / 2
+    if arr[mid] == target:
+        return True
+    elif target > arr[mid]:
+        mid = mid + 1
+        binary_search(arr[mid:], target)
+    else:
+        high = mid - 1
+        binary_search(arr[:high], target)
