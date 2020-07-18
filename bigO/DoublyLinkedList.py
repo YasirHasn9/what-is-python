@@ -139,6 +139,7 @@ class DoublyLinkedList:
 
     def add_to_head(self, value):
         new_node = ListNode(value)
+        self.length += 1
         if not self.head and not self.tail:
             self.head = new_node
             self.tail = new_node
@@ -146,6 +147,18 @@ class DoublyLinkedList:
             new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
+
+    def add_to_tail(self, value):
+        new_node = ListNode(value)
+        self.length += 1
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+            return
+        else:
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
 
     def remove_from_head(self):
         value = self.head.value
@@ -182,7 +195,6 @@ class DoublyLinkedList:
         return value
 
     def get_max(self):
-
         max_value = self.head.value
         cur_node = self.head
         while cur_node:
