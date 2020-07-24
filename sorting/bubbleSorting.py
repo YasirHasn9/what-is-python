@@ -7,6 +7,7 @@ item in the list be at mosttop right of the list and the smallest one stays in t
 
 def bubble_sort(arr):
     swapped = True
+    # We set swapped to True in the beginning to ensure that the algorithm runs at least once.
     while swapped:
         # for the purpose of iteration
         swapped = False  
